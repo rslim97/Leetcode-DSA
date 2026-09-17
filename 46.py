@@ -18,7 +18,7 @@ class Solution(object):
                 # Make choice
                 used[i]=True
                 track.append(nums[i])
-                # Backtrack
+                # Backtrack children
                 helper(track,used)
                 # Undo choice
                 used[i]=False

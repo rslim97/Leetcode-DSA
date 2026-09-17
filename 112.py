@@ -48,12 +48,12 @@ class Solution(object):
         return dfs(root,0)
 
 if __name__ == '__main__':
-    # t=TreeNode(5)
-    # t.left=TreeNode(4)
-    # t.left.left=TreeNode(11)
-    # t.left.left.left=TreeNode(7)
-    # t.left.left.right=TreeNode(2)
-    # targetSum=22
+    t=TreeNode(5)
+    t.left=TreeNode(4)
+    t.left.left=TreeNode(11)
+    t.left.left.left=TreeNode(7)
+    t.left.left.right=TreeNode(2)
+    targetSum=22
     # t=TreeNode(1)
     # t.left=TreeNode(2)
     # t.right=TreeNode(3)

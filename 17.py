@@ -24,7 +24,7 @@ class Solution(object):
             for c in phone[digits[depth]]:
                 # Make choice
                 track+=c
-                # Backtrack
+                # Backtrack children
                 helper(track,depth+1)
                 # Undo choice
                 track=track[:-1]
