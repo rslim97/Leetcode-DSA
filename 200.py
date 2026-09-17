@@ -7,11 +7,15 @@ class Solution(object):
         num_islands=0
         def dfs(i,j):
             # Base case
+            ## Check bounds
             if i<0 or i>=h or j<0 or j>=w:
                 return
+            ## Check if visited
             if grid[i][j]=="0":
                 return
+            # Mark visited
             grid[i][j]="0"
+            # Recursive case
             dfs(i+1,j)
             dfs(i-1,j)
             dfs(i,j+1)
