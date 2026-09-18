@@ -11,9 +11,41 @@ class Solution(object):
         :type root: Optional[TreeNode]
         :rtype: List[str]
         """
-        res=[]
-        return res
+        # res=[]
+        # track=[]
+        # def helper(track,root):
+        #     if not root:
+        #         return
+        #     # Make choice
+        #     track.append(root.val)
+        #     # Detect leaf node
+        #     if not root.left and not root.right:
+        #         res.append(track[:])
+        #     helper(track,root.left)
+        #     helper(track,root.right)
+        #     # Undo choice/backtrack
+        #     track.pop()
 
+        # helper(track,root)
+        # return res
+
+        res=[]
+        track=""
+        def helper(track,root):
+            if not root:
+                return
+            # Make choice
+            track+=str(root.val)
+            if not root.left and not root.right:
+                res.append(track[:])
+            helper(track+"->",root.left)
+            helper(track+"->",root.right)
+            # Undo choice
+            track=track[:-1]
+
+        helper(track,root)
+        return res
+    
 
 if __name__ == '__main__':
     t=TreeNode(1)
