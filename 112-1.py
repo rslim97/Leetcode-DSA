@@ -14,38 +14,38 @@ class Solution(object):
         :type targetSum: int
         :rtype: bool
         """
-        # if not root:
-        #     return False
-        # q=deque([(root,root.val)])
-        # while q:
-        #     curr_node,path_sum=q.popleft()
-        #     if not curr_node.left and \
-        #         not curr_node.right and \
-        #         path_sum==targetSum:
-        #         return True
-        #     if curr_node.left:
-        #         q.append((curr_node.left,path_sum+curr_node.left.val))
-        #     if curr_node.right:
-        #         q.append((curr_node.right,path_sum+curr_node.right.val))
-
-        # return False
-
         if not root:
             return False
-        
-        def dfs(root,path_sum):
-            if not root:
-                return False
-            
-            path_sum+=root.val
-            if not root.left and not root.right and \
+        q=deque([(root,root.val)])
+        while q:
+            curr_node,path_sum=q.popleft()
+            if not curr_node.left and \
+                not curr_node.right and \
                 path_sum==targetSum:
                 return True
-                
-            return dfs(root.left,path_sum) or \
-                dfs(root.right,path_sum)
+            if curr_node.left:
+                q.append((curr_node.left,path_sum+curr_node.left.val))
+            if curr_node.right:
+                q.append((curr_node.right,path_sum+curr_node.right.val))
 
-        return dfs(root,0)
+        return False
+
+        # if not root:
+        #     return False
+        
+        # def dfs(root,path_sum):
+        #     if not root:
+        #         return False
+            
+        #     path_sum+=root.val
+        #     if not root.left and not root.right and \
+        #         path_sum==targetSum:
+        #         return True
+                
+        #     return dfs(root.left,path_sum) or \
+        #         dfs(root.right,path_sum)
+
+        # return dfs(root,0)
 
 if __name__ == '__main__':
     t=TreeNode(5)
