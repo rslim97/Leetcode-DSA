@@ -7,7 +7,7 @@ class Solution(object):
         res=[]  # Result
         track=[]  # Track
         used=[False]*len(nums)  # Choice list
-        def helper(track,used):
+        def helper(track,used):  # used here determines the choice list.
             # Termination condition
             if len(track)==len(nums):
                 res.append(track[:])
@@ -18,9 +18,8 @@ class Solution(object):
                 # Make choice
                 used[i]=True
                 track.append(nums[i])
-                # Backtrack children
                 helper(track,used)
-                # Undo choice
+                # Undo choice/backtrack
                 used[i]=False
                 track.pop()                                
 

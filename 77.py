@@ -16,13 +16,11 @@ class Solution(object):
                 return
             # Make choice: inclusion
             track.append(depth)
-            # Backtrack children
             helper(track,depth+1)
-            # Undo choice
+            # Undo choice/backtrack
             track.pop()
 
             # Make choice: exclusion
-            # Backtrack children
             helper(track,depth+1)
 
         helper(track,1)
