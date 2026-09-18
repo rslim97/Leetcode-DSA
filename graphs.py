@@ -101,21 +101,38 @@ def bfs(graph,root):
 
 #     return visited
 
+# # DFS recursive
+# def dfs(graph,root):
+#     visited=set()
+#     edges=set()
+#     def helper(node,visited):
+#         visited.add(node)
+#         for child in graph[node]:
+#             if child not in visited:
+#                 edges.add((child,node))
+#                 helper(child,visited)
+
+#     helper(root,visited)
+#     return visited,edges 
+
 # DFS recursive
 def dfs(graph,root):
     visited=set()
+    edges=set()
     def helper(node,visited):
-        visited.add(node)
-        for child in graph[node]:
-            if child not in visited:
+        if node not in visited:
+            visited.add(node)
+            for child in graph[node]:
+                edges.add((child,node))
                 helper(child,visited)
 
     helper(root,visited)
-    return visited 
+    return visited,edges
 
 
 if __name__ == '__main__':
     res=bfs(graph,"A")
     print(res)
-    res=dfs(graph,"A")
-    print(res)
+    _, edges=dfs(graph,"A")
+    print(edges)
+    print(len(edges))
