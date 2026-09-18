@@ -8,7 +8,7 @@ Created on Sun Sep 13 15:14:48 2026
 def binary_search(x,target):
     l,r=0,len(x)-1
     def helper(l,r):
-        if l<r:
+        if l<=r:
             mid=l+(r-l+1)//2
             print(l,mid,r)
             if x[mid]==target:
@@ -16,7 +16,7 @@ def binary_search(x,target):
             if target<x[mid]:
                 return helper(l,mid-1)
             else:
-                return helper(mid,r)
+                return helper(mid+1,r)
         else:
             return -1
     return helper(l,r)    
