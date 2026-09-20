@@ -38,6 +38,7 @@ class Solution(object):
             track+=str(root.val)
             if not root.left and not root.right:
                 res.append(track[:])
+                return
             helper(track+"->",root.left)
             helper(track+"->",root.right)
             # Undo choice
