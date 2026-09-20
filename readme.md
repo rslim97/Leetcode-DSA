@@ -21,7 +21,7 @@ Function call examples:
 2. helper(track,root) in Problem 257: binaryTreePaths.
 <br></br>
 
-Example:
+Example: Problem 257: binaryTreePaths
 ```python
 class TreeNode():
     def __init__(self, val):
@@ -91,7 +91,7 @@ Function call examples:
 3. helper(track,0) in Problem 17: LetterCombinations.
 <br></br>
 
-Example:
+Example: Problem 46: Permutation
 ```python
 class Solution(object):
     def permute(self,nums):
