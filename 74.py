@@ -5,19 +5,32 @@ class Solution(object):
         :type target: int
         :rtype: bool
         """
+        # h,w=len(matrix),len(matrix[0])
+        # l,r=0,h*w-1
+        # while l<=r:
+        #     mid=l+(r-l+1)//2
+        #     mid_value=matrix[mid//w][mid%w]
+        #     if mid_value==target:
+        #         return True
+        #     elif target<mid_value:
+        #         r=mid-1
+        #     else:
+        #         l=mid+1
+
+        # return False
+
         h,w=len(matrix),len(matrix[0])
         l,r=0,h*w-1
-        while l<=r:
-            mid=l+(r-l+1)//2
+        while l<r:
+            mid=l+(r-l)//2
             mid_value=matrix[mid//w][mid%w]
-            if mid_value==target:
-                return True
-            elif target<mid_value:
-                r=mid-1
+            # x,y=divmod(mid,w)
+            # mid_value=matrix[x][y]
+            if mid_value>=target:
+                r=mid
             else:
                 l=mid+1
-
-        return False
+        return True if matrix[l//w][l%w]==target else False
 
 
 if __name__ == '__main__':
