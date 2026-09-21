@@ -47,6 +47,7 @@ class Solution(object):
 
         # return dfs(root,0)
 
+
 if __name__ == '__main__':
     t=TreeNode(5)
     t.left=TreeNode(4)
