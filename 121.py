@@ -16,6 +16,7 @@ class Solution(object):
         min_price=float('inf')
         max_profit=0
         for i in range(len(prices)):
+            # DP: Keep track of min price
             if prices[i]<min_price:
                 min_price=prices[i]
 
