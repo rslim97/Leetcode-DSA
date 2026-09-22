@@ -20,10 +20,8 @@ class Solution(object):
                 return 0
             if low<=root.val<=high:
                 range_sum+=root.val
-            if root.left:
-                range_sum+=dfs(root.left,low,high)
-            if root.right:
-                range_sum+=dfs(root.right,low,high)
+            range_sum+=dfs(root.left,low,high)
+            range_sum+=dfs(root.right,low,high)
 
             return range_sum
         
