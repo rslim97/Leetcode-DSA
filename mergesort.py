@@ -24,16 +24,16 @@ def mergesort(x):
             else:
                 res.append(right[j])
                 j+=1
-        if i==len(left):
-            res.extend(right[j:])
-        elif j==len(right):
+        if i<len(left):
             res.extend(left[i:])
+        if j<len(right):
+            res.extend(right[j:])
         return res
         
         
 if __name__ == '__main__':
     x=[1,11,3,5,-1,13,2]
-    x=[1,-2]
+    # x=[1,-2]
     # x=[1]
     # x=[1,11]
     res=mergesort(x)
