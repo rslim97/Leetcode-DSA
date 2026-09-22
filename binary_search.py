@@ -13,8 +13,10 @@ Created on Sun Sep 13 15:14:48 2026
 #             print(l,mid,r)
 #             if x[mid]==target:
 #                 return mid
-#             if target<x[mid]:
+#             # am too big
+#             if x[mid]>target:
 #                 return helper(l,mid-1)
+#             # am too small
 #             else:
 #                 return helper(mid+1,r)
 #         else:
@@ -26,17 +28,19 @@ def binary_search(x, target):
     l,r=0,len(x)-1
     while l<r:
         mid=l+(r-l)//2
+        # am too big
         if x[mid]>=target:
             r=mid
-        else:
+        # am too small
+        else:  
             l=mid+1
     return l if x[l]==target else -1
 
 
 if __name__ == '__main__':
-    # x=[2,3,5,7,11,13]
-    x=[2]
-    # target=11
-    target=3
+    x=[2,3,5,7,11,13]
+    # x=[2]
+    target=11
+    # target=3
     res=binary_search(x,target)
     print(res)
