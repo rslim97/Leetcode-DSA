@@ -10,6 +10,7 @@ class Solution(object):
         for i in range(len(text1)):
             for j in range(len(text2)):
                 if text1[i]==text2[j]:
+                    # Extend
                     memo[i+1][j+1]=1+memo[i][j]
                 else:
                     memo[i+1][j+1]=max(memo[i][j+1],memo[i+1][j])
